@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 100vh; */
+            height: 100vh;
+            background: linear-gradient(45deg, #f0f0f0, #f5d6d6);
+
+        }
+
+        .sub-cont {
+            display: flex;
+            height: 65%;
+            width: 25%;
+            border: 1px solid white;
+            /* justify-content: center; */
+            flex-direction: column;
+            align-items: center;
+            /* margin-top: auto; */
+            border-radius: 5%;
+            background-color: white;
+            box-shadow: 1rem 1rem 3rem .5rem rgb(231, 201, 201);
+        }
+
+        .header {
+            font-size: 3rem;
+            padding: 2rem 2rem;
+        }
+
+        .decription {
+            display: flex;
+            align-items: center;
+            /* background-color: var(--twitter-background); */
+            border: 1px solid rgb(244, 242, 242);
+            padding: 0.625em;
+            border-radius: 1.25em;
+            margin-top: 0.625em;
+            margin-left: 1.25em;
+            /* width: 10%; */
+            background-color: rgb(244, 242, 242);
+
+        }
+
+        .input-css {
+            /* width: 25%; */
+            height: 100%;
+            background-color: rgb(244, 242, 242);
+            outline: none;
+            border: none;
+            padding: .5em 2em;
+
+        }
+
+        .css-button {
+            border: none;
+            padding: .5em;
+            color: black;
+            border-left: 1px solid rgb(212, 211, 211);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .js-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 85%;
+            padding: 2em 2em;
+            font-size: 1em;
+            /* border: 2px solid red; */
+            align-items: center;
+        }
+
+        .js-div .del-button {
+            padding: 1em 1em;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            border-radius: .5em;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-cont">
+            <div class="header">To-Do List</div>
+            <div class="decription">
+                <input type="text" class="input-css" placeholder="tasks...">
+                <button class="css-button" onclick="run();">submit</button>
+            </div>
+            <div class="js-div">
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let arr = [];
+
+        function render() {
+            let html = '';
+            arr.forEach((e, index) => {
+                let innerHtml = `<div class="tasks">
+                    <p>${e}</p>
+                </div>
+                <button class="del-button" onclick="del(${index})">Delete</button>`;
+                html += innerHtml;
+                // console.log(html);
+
+            })
+            document.querySelector('.js-div').innerHTML = html;
+
+
+        }
+        function run() {
+            let element = document.querySelector('.input-css');
+            let ele = element.value;
+            arr.push(ele);
+            element = '';
+            if (ele === '') {
+                return;
+            }
+            render();
+        }
+        function del(index){
+            arr.splice(index,1);
+            render();
+        }
+    </script>
+</body>
+
+</html>

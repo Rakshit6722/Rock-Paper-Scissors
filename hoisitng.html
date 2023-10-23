@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <script>
+
+        //this will work because obviously we have first declared the function and then called it 
+        // function func1(a,b){
+        //     return a+b;
+        // }
+        // const func2 = (a,b) => a+b;
+
+        // console.log(func1(1,2));
+        // console.log(func2(3,4));
+
+
+
+        //but this will also work though we have called function first and declared it later, this is called hoisting
+        // const func2 = (a,b) => a+b;
+
+        // console.log(func1(1,2));
+        // console.log(func2(3,4));
+
+                
+        // function func1(a,b){
+        //     return a+b;
+        // }
+
+
+        //but this will not work now, JS automatically moves function on top when made with function keyword but not with const keyword
+        //so this will give error
+        console.log(func1(1,2));
+        console.log(func2(3,4));
+
+        const func2 = (a,b) => a+b;
+                
+        function func1(a,b){
+            return a+b;
+        }
+
+        
+
+    </script>
+</body>
+</html>

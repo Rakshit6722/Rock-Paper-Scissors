@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Practice</title>
+</head>
+<body>
+    <script>
+        const product1 = {
+            name: 'IPhone 14',
+            price: 80000
+        }
+        const product2 = {
+            name: 'Redmi',
+            price: 10000
+        }
+        function compare(a,b){
+            if(product1.price>product2.price){
+                return product1;
+            }
+            else{
+                return product2;
+            }
+        }
+        function isEqual(a,b){
+            if(product1.price==product2.price && product1.name==product2.name){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        console.log(compare(product1,product2));
+        console.log(isEqual(product1,product2));
+        console.log('hello'.repeat(2));
+        console.log('good morning'.toUpperCase());
+
+    </script>
+</body>
+</html>

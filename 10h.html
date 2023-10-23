@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .option{
+            font-size: 20px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            margin: auto 5px;
+            padding: 10px 10px;
+            border-radius: 25px;
+        }
+        .second-class{
+            background-color: black;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <button class="js-option option" onclick="fun1('Gaming')">Gaming</button>
+    <button class="js-option1 option" onclick="fun1('Music')">Music</button>
+    <button class="js-option2 option" onclick="fun1('Tech')">Tech</button>
+
+    <script>
+        function fun1(choice){
+            // let element = document.querySelector('.js-option');
+            let element;
+            if(choice==='Gaming'){
+                element = document.querySelector('.js-option');
+                if(!element.classList.contains('second-class')){
+
+                    element.classList.add('second-class');
+                }
+                else{
+                    element.classList.remove('second-class');
+                }
+            }
+            else if(choice==='Music'){
+                element=document.querySelector('.js-option1');
+                if(!element.classList.contains('second-class')){
+                    element.classList.add('second-class');
+                }
+                else{
+                    element.classList.remove('second-class');
+                }
+            }
+            else{
+                element=document.querySelector('.js-option2');
+                if(!element.classList.contains('second-class')){
+                    element.classList.add('second-class');
+                }
+                else{
+                    element.classList.remove('second-class');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

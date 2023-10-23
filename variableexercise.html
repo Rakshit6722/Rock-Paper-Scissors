@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Exercise</title>
+</head>
+
+<body>
+    <h3>Cart Quantity</h3>
+    <button onclick="console.log(`Cart Quantity : ${cartQuantity}`)" ;>Show Quantity</button>
+    <button onclick=" cartQuantity = cartQuantity+1;console.log(`Cart Quantity : ${cartQuantity}`)" ;>
+        Addd to Cart</button>
+    <button onclick="cartQuantity = cartQuantity+2;console.log(`Cart Quantity : ${cartQuantity}`)" ;>+2</button>
+    <button onclick="cartQuantity = cartQuantity+3;console.log(`Cart Quantity : ${cartQuantity}`)" ;>+3</button>
+    <button onclick="console.log(`Cart Quantity : ${cartQuantity=0}`)" ;>Reset Cart</button>
+
+    <script>
+        let cartQuantity = 0;
+
+        const var1 = 3;
+        //cannot change constant value
+        // var1 = 5;
+        console.log(typeof var1);
+    </script>
+
+</body>
+
+</html>

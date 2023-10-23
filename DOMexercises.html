@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercise</title>
+</head>
+
+<body>
+    <button onclick="choose('Head')">Head</button>
+    <button onclick="choose('Tail')">Tail</button>
+    <p class="js-para"></p>
+
+    
+    <input class="js-input" onkeydown="
+    if(event.key==='Enter'){
+        func2();
+    }
+    ">
+    <button class="js-button"
+    onclick="
+    func2();
+    ">Submit</button>
+    <p class="js-para2"></p>
+
+    <script>
+        function choose(a) {
+            // const val = document.querySelector('button');
+            if (a === 'Head') {
+                document.querySelector('.js-para').innerHTML = 'You chose head';
+            }
+            if (a === 'Tail') {
+                document.querySelector('.js-para').innerHTML = 'You chose Tail';
+            }
+        }
+
+        function func2(){
+            const name = document.querySelector('.js-input');
+            let var1 = name.value;
+
+            document.querySelector('.js-para2').innerHTML = `My name is ${var1}`;
+        }
+    </script>
+</body>
+
+</html>

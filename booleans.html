@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <script>
+        // console.log(5>4);
+        // // console.log(5==4);
+        // // console.log(5==5);
+        // // console.log(5<4);
+
+        // //== converts both operand into same type
+        // console.log(5=='5.00');
+        // //instead use this
+        // console.log(5==='5.00');
+        // //similarly not equals to
+        // console.log(5!=='5.00');
+
+
+        //if-else
+        // if(30>=18){
+        //     console.log("yes");
+        // }
+        // else if(15==15){
+        //     console.log("yes");
+        // }
+        // else{
+        //     console.log('no');
+        //         }
+
+
+        //truthy and falsy values
+        // falsy values = false 0 '' NaN undefined null
+        // anything except this is a truthy value
+        // if(null){
+        //     console.log('truthy')
+        // }
+
+        // var cartQuantity = 0;
+        // if(cartQuantity){
+        //     console.log("cart has products");
+        // }
+
+        //ternary operator
+        //here true acts like if(true)
+        //and if(true) then print truthy else print falsy
+        // console.log(true ? 'truthy' : 'falsy');
+
+        //guard operator
+        //&& operators only checks right side if left side is true and this creates a short-circuit evaluation
+        //if(condition) print hello
+        // false && console.log('hello');
+
+        //default operator
+        //uses || OR operation
+        //OR stops early if left side is true
+
+        //EUR will be stored in currency as 'EUR' is a truthy value
+        // const currency = 'EUR' || 'USD';
+        // console.log(currency);
+
+        //but if we take a falsy value at left side then 'USD' value will be stored as a default value and stored in currency
+        const currency = undefined || 'USD';
+        console.log(currency);
+    </script>
+</body>
+</html>

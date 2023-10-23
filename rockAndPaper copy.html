@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock and Paper</title>
+</head>
+
+<body>
+    <h3>Rock Paper Scissors</h3>
+    <button onclick="
+    compare('rock');">Rock</button>
+    <button onclick="
+    compare('rock');">Paper</button>
+    <button onclick="
+    compare('rock');">Scissors</button>
+
+    <script>
+
+        function compare(para1) {
+            const compMov = func1();
+            let result = '';
+            if (para1 === 'scissors') {
+                if (compMov === 'scissors') {
+                    result = 'You tie';
+                }
+                else if (compMov === 'rock') {
+                    result = 'You lost';
+                }
+                else {
+                    result = 'You win';
+                }
+            }
+            else if (para1 === 'paper') {
+
+                if (compMov === 'paper') {
+                    result = 'You tie';
+                }
+                else if (compMov === 'scissors') {
+                    result = 'You lost';
+                }
+                else {
+                    result = 'You win';
+                }
+            }
+            else {
+
+                if (compMov === 'rock') {
+                    result = 'You tie';
+                }
+                else if (compMov === 'paper') {
+                    result = 'You lost';
+                }
+                else {
+                    result = 'You win';
+                }
+            }
+            alert(`You picked ${para1}, Computer picked ${compMov}, ${result}`);
+        }
+
+
+        function func1() {
+            let randomNum = Math.random();
+            let compMov = '';
+
+            if (randomNum >= 0 && randomNum < 1 / 3) {
+                compMov = 'rock';
+            }
+            else if (randomNum >= 1 / 3 && randomNum < 2 / 3) {
+                compMov = 'paper';
+            }
+            else {
+                compMov = 'scissors'
+            }
+            // console.log(compMov);
+            return compMov;
+
+        }
+    </script>
+</body>
+
+</html>

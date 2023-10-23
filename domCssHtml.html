@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .subs-button {
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .second-class {
+            background-color: rgb(221, 219, 219);
+            color: black;
+        }
+
+        .input-box {
+            font-size: 15px;
+            padding: 10px 10px;
+        }
+        .button-class{
+            font-size: 15px;
+            padding: 11px 12px;
+            background-color: rgb(6, 182, 6);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button class="subs-button" onclick="
+    func();
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+
+    
+    <input placeholder="Cost of order" class="js-input input-box" onkeydown="
+// console.log(event.key)
+key();
+
+">
+    <button class="button-class" onclick="
+calculate();
+">Calculate</button>
+
+    <p class="display"></p>
+
+    <script>
+
+        //one way to change CSS properties of an elements is to add another class to it and give styling to that class
+        function func() {
+            const element = document.querySelector('button');
+            if (element.innerText === 'Subscribe') {
+                element.innerText = 'Subscribed';
+                element.classList.add('second-class');
+            }
+            else {
+                element.innerText = 'Subscribe';
+                element.classList.remove('second-class')
+            }
+        }
+
+        function key() {
+            if (event.key === 'Enter') {
+                calculate();
+            }
+        }
+
+        function calculate() {
+            const element = document.querySelector('.js-input');
+            let cost = Number(element.value);
+
+            if (cost < 40) {
+                cost += 10;
+            }
+
+            document.querySelector('.display').innerHTML = `Cost: $${cost}`;
+        }
+    </script>
+</body>
+
+</html>

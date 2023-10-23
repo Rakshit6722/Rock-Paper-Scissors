@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const products = {
+            name: 't-shirt',
+            price: 999,
+            ['delievery-time']: '2 day',
+            'delivery-day': 'tommorrow',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            fun: function func1(){
+                console.log("function inside object");
+            }
+
+        };
+        console.log(products);
+        console.log(products.name);
+
+        products.name = 'shirt';
+        console.log(products);
+        console.log(products.name);
+
+        products.color = 'red';
+        console.log(products);
+
+        delete products.color;
+        console.log(products);
+        console.log(products['price-today']);
+        console.log(products);
+        console.log(products.rating.count);
+        products.fun();
+
+        //to convert into JSON objects
+        console.log(JSON.stringify(products));
+        const string = JSON.stringify(products);
+        console.log(JSON.parse(string));
+
+        console.log('hello'.length);
+        console.log('HELLO'.toLocaleLowerCase());
+
+        const obj1 = {
+            name: 'rakshit'
+        }
+        const obj2 = obj1;
+        obj2.name = 'khattar';
+        console.log(obj1);
+
+        const obj4 = {
+            message: 'hi',
+            price: 55
+        }
+
+        //destructuring
+        const {message, price} = obj4;
+        console.log(message);
+        console.log(price);
+
+        const obj5 = {
+            // message: message
+            message,
+            func1(){
+                console.log('hi');
+            }
+        }
+        console.log(obj5);
+        obj5.func1();
+
+        
+    </script>
+</body>
+</html>
